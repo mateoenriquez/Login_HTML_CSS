@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdminExpress - Sign In</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Material Icons para los íconos del formulario -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <!-- Google Fonts - Inter para tipografía moderna -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ============================================
+         CONTENEDOR PRINCIPAL - CSS Grid de 2 columnas
+         ============================================ -->
+    <div class="login-container">
+
+        <!-- ========================================
+             PANEL IZQUIERDO - Branding / decorativo
+             (Oculto en móviles)
+             ======================================== -->
+        <aside class="brand-panel">
+            <div class="brand-content">
+                <h1 class="brand-logo">AdminExpress</h1>
+            </div>
+        </aside>
+
+        <!-- ========================================
+             PANEL DERECHO - Formulario de Login
+             ======================================== -->
+        <main class="form-panel">
+            <div class="form-wrapper">
+
+                <!-- Encabezado del formulario -->
+                <header class="form-header">
+                    <h2 class="form-title">Let's <strong>Sign In</strong> 👋</h2>
+                    <p class="form-subtitle">
+                        Hey, Enter your details to get sign in
+                        to your account.
+                    </p>
+                </header>
+
+                <!-- Formulario de inicio de sesión -->
+                <form class="login-form" action="#" method="POST">
+
+                    <!-- Campo de Email -->
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon material-symbols-outlined">mail</span>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                class="form-input" 
+                                placeholder="Enter Email"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Campo de Password -->
+                    <div class="form-group">
+                        <label for="password" class="form-label">Password</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon material-symbols-outlined">lock</span>
+                            <input 
+                                type="password" 
+                                id="password" 
+                                name="password" 
+                                class="form-input" 
+                                placeholder="Enter Password"
+                                required
+                            >
+                            <!-- Botón para mostrar/ocultar contraseña -->
+                            <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                                <span class="material-symbols-outlined">visibility_off</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Enlace "Forgot password?" -->
+                    <div class="forgot-password">
+                        <a href="#" class="forgot-link">Forgot password?</a>
+                    </div>
+
+                    <!-- Botón de envío -->
+                    <button type="submit" class="btn-signin">Sign In</button>
+
+                </form>
+
+                <!-- Enlace de registro (visible principalmente en móviles) -->
+                <footer class="form-footer">
+                    <p>Don't have an account? <a href="#" class="signup-link">Sign Up</a></p>
+                </footer>
+
+            </div>
+        </main>
+
+    </div>
+
+    <!-- Script para toggle de visibilidad de contraseña -->
+    <script>
+        // Toggle para mostrar/ocultar la contraseña
+        const toggleBtn = document.querySelector('.toggle-password');
+        const passwordInput = document.getElementById('password');
+        const toggleIcon = toggleBtn.querySelector('.material-symbols-outlined');
+
+        toggleBtn.addEventListener('click', () => {
+            const isPassword = passwordInput.type === 'password';
+            passwordInput.type = isPassword ? 'text' : 'password';
+            toggleIcon.textContent = isPassword ? 'visibility' : 'visibility_off';
+        });
+    </script>
+
+</body>
+</html>
